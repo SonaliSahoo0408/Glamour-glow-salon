@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Glow Studio Salon | Bangalore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #fff;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(to right, #ff758c, #ff7eb3);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+
+      header p {
+        font-size: 18px;
+        margin-bottom: 25px;
+      }
+
+      .cta-btn {
+        background: #fff;
+        color: #ff4d6d;
+        padding: 14px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        transition: 0.3s;
+      }
+
+      .cta-btn:hover {
+        background: #ffe3ea;
+      }
+
+      section {
+        padding: 60px 20px;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 30px;
+        color: #ff4d6d;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+
+      .service-card {
+        background: #fff0f4;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+
+      .service-card h3 {
+        margin-bottom: 10px;
+        color: #ff4d6d;
+      }
+
+      .service-card p {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+
+      .hours {
+        background: #f8f8f8;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      .hours p {
+        margin: 8px 0;
+        font-weight: 500;
+      }
+
+      .booking-form {
+        background: #fff0f4;
+        padding: 30px;
+        border-radius: 15px;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .booking-form input,
+      .booking-form select {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+      }
+
+      .booking-form button {
+        width: 100%;
+        padding: 14px;
+        background: #25d366;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .booking-form button:hover {
+        background: #1ebc59;
+      }
+
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 50px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Look Stunning for Every Occasion</h1>
+      <p>Professional Beauty & Salon Services in Bangalore</p>
+      <a href="#booking" class="cta-btn">Book Appointment on WhatsApp</a>
+    </header>
+
+    <section>
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Haircut – ₹499</h3>
+          <p>Professional styling with expert finish.</p>
+        </div>
+        <div class="service-card">
+          <h3>Facial – ₹999</h3>
+          <p>Glow-enhancing treatment for radiant skin.</p>
+        </div>
+        <div class="service-card">
+          <h3>Bridal Makeup – ₹4999</h3>
+          <p>Premium bridal makeover for your special day.</p>
+        </div>
+        <div class="service-card">
+          <h3>Manicure – ₹699</h3>
+          <p>Clean, shape & polish for beautiful hands.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Opening Hours</h2>
+      <div class="hours">
+        <p>Mon – Sat: 10:00 AM – 8:00 PM</p>
+        <p>Sunday: 11:00 AM – 6:00 PM</p>
+        <p>Lunch Break: 2:00 PM – 3:00 PM</p>
+      </div>
+    </section>
+
+    <section id="booking">
+      <h2>Book Your Appointment</h2>
+      <div class="booking-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="tel" id="phone" placeholder="Your Phone Number" required />
+
+        <select id="service">
+          <option value="">Select Service</option>
+          <option>Haircut</option>
+          <option>Facial</option>
+          <option>Bridal Makeup</option>
+          <option>Manicure</option>
+        </select>
+
+        <input type="date" id="date" />
+
+        <select id="time">
+          <option value="">Preferred Time</option>
+          <option>10:00 AM</option>
+          <option>11:00 AM</option>
+          <option>12:00 PM</option>
+          <option>1:00 PM</option>
+          <option>3:00 PM</option>
+          <option>4:00 PM</option>
+          <option>5:00 PM</option>
+          <option>6:00 PM</option>
+          <option>7:00 PM</option>
+        </select>
+
+        <button onclick="sendWhatsApp()">Confirm Booking via WhatsApp</button>
+        <p style="font-size: 12px; text-align: center; margin-top: 10px">
+          Final timing confirmation will be shared via WhatsApp.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Glow Studio Salon | Designed for Professional Booking
+    </footer>
+
+    <script>
+      function sendWhatsApp() {
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        var service = document.getElementById("service").value;
+        var date = document.getElementById("date").value;
+        var time = document.getElementById("time").value;
+
+        if (
+          name === "" ||
+          phone === "" ||
+          service === "" ||
+          date === "" ||
+          time === ""
+        ) {
+          alert("Please fill all details.");
+          return;
+        }
+
+        var message =
+          "Hello Glow Studio,%0A%0AI would like to book an appointment:%0A%0A" +
+          "Name: " +
+          name +
+          "%0A" +
+          "Phone: " +
+          phone +
+          "%0A" +
+          "Service: " +
+          service +
+          "%0A" +
+          "Date: " +
+          date +
+          "%0A" +
+          "Time: " +
+          time +
+          "%0A%0AThank you!";
+
+        var whatsappNumber = "919999999999"; // Replace with real salon number
+        var url = "https://wa.me/" + whatsappNumber + "?text=" + message;
+
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>
