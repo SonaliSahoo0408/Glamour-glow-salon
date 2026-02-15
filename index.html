@@ -4,154 +4,70 @@
     <meta charset="UTF-8" />
     <title>Glow Studio Salon | Bangalore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
-
-      body {
-        background: #fff;
-        color: #333;
-        line-height: 1.6;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; scroll-behavior: smooth; }
+      body { background: #fff; color: #333; line-height: 1.6; }
 
       header {
         background: linear-gradient(to right, #ff758c, #ff7eb3);
-        color: white;
-        padding: 80px 20px;
-        text-align: center;
+        color: white; padding: 80px 20px; text-align: center;
       }
-
-      header h1 {
-        font-size: 40px;
-        margin-bottom: 15px;
-      }
-
-      header p {
-        font-size: 18px;
-        margin-bottom: 25px;
-      }
+      header h1 { font-size: 40px; margin-bottom: 15px; }
+      header p { font-size: 18px; margin-bottom: 25px; }
 
       .cta-btn {
-        background: #fff;
-        color: #ff4d6d;
-        padding: 14px 30px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 600;
-        display: inline-block;
-        transition: 0.3s;
+        background: #fff; color: #ff4d6d; padding: 14px 30px; border-radius: 30px;
+        text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s;
       }
+      .cta-btn:hover { background: #ffe3ea; transform: translateY(-3px); }
 
-      .cta-btn:hover {
-        background: #ffe3ea;
-      }
-
-      section {
-        padding: 60px 20px;
-        max-width: 1100px;
-        margin: auto;
-      }
-
-      h2 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 30px;
-        color: #ff4d6d;
-      }
+      section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+      h2 { text-align: center; margin-bottom: 40px; font-size: 30px; color: #ff4d6d; }
 
       .services {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;
       }
-
       .service-card {
-        background: #fff0f4;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        text-align: center;
+        background: #fff0f4; padding: 25px; border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); text-align: center;
       }
+      .service-card h3 { margin-bottom: 10px; color: #ff4d6d; }
 
-      .service-card h3 {
-        margin-bottom: 10px;
-        color: #ff4d6d;
-      }
+      .hours { background: #f8f8f8; padding: 30px; border-radius: 15px; text-align: center; }
+      .hours p { margin: 8px 0; font-weight: 500; }
 
-      .service-card p {
-        font-size: 14px;
-        margin-bottom: 8px;
-      }
-
-      .hours {
-        background: #f8f8f8;
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-      }
-
-      .hours p {
-        margin: 8px 0;
-        font-weight: 500;
-      }
-
+      /* --- BOOKING FORM WITH MOBILE DATE FIX --- */
       .booking-form {
-        background: #fff0f4;
-        padding: 30px;
-        border-radius: 15px;
-        max-width: 600px;
-        margin: auto;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        background: #fff0f4; padding: 30px; border-radius: 15px;
+        max-width: 600px; margin: auto; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      .booking-form label { font-size: 13px; font-weight: 600; color: #ff4d6d; display: block; margin-bottom: 5px; }
+      .booking-form input, .booking-form select {
+        width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px;
+        border: 1px solid #ddd; font-size: 14px; background: white; outline: none;
       }
 
-      .booking-form input,
-      .booking-form select {
+      /* Fix for Mobile Date Placeholder */
+      input[type="date"]::before {
+        content: attr(placeholder);
         width: 100%;
-        padding: 12px;
-        margin-bottom: 15px;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-        font-size: 14px;
+        color: #999;
+      }
+      input[type="date"]:focus::before,
+      input[type="date"]:valid::before {
+        display: none;
       }
 
       .booking-form button {
-        width: 100%;
-        padding: 14px;
-        background: #25d366;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.3s;
+        width: 100%; padding: 14px; background: #25d366; color: white;
+        border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s;
       }
+      .booking-form button:hover { background: #1ebc59; }
 
-      .booking-form button:hover {
-        background: #1ebc59;
-      }
+      footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; font-size: 14px; }
 
-      footer {
-        background: #333;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        margin-top: 50px;
-        font-size: 14px;
-      }
-
-      @media (max-width: 600px) {
-        header h1 {
-          font-size: 28px;
-        }
-      }
+      @media (max-width: 600px) { header h1 { font-size: 28px; } }
     </style>
   </head>
 
@@ -189,51 +105,80 @@
       <div class="hours">
         <p>Mon – Sat: 10:00 AM – 8:00 PM</p>
         <p>Sunday: 11:00 AM – 6:00 PM</p>
-        <p>Lunch Break: 2:00 PM – 3:00 PM</p>
+        <p style="color: #ff4d6d; font-weight: bold;">Lunch Break: 2:00 PM – 3:00 PM (Staff Unavailable)</p>
       </div>
     </section>
 
     <section id="booking">
       <h2>Book Your Appointment</h2>
       <div class="booking-form">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="tel" id="phone" placeholder="Your Phone Number" required />
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Enter Full Name" required />
+        
+        <label>Phone Number</label>
+        <input type="tel" id="phone" placeholder="10-digit Mobile Number" maxlength="10" required />
 
+        <label>Select Service</label>
         <select id="service">
-          <option value="">Select Service</option>
+          <option value="">-- Choose Service --</option>
           <option>Haircut</option>
           <option>Facial</option>
           <option>Bridal Makeup</option>
           <option>Manicure</option>
         </select>
 
-        <input type="date" id="date" />
+        <label>Appointment Date</label>
+        <input type="date" id="date" placeholder="Select Date" required />
 
+        <label>Preferred Time (15-min intervals)</label>
         <select id="time">
-          <option value="">Preferred Time</option>
-          <option>10:00 AM</option>
-          <option>11:00 AM</option>
-          <option>12:00 PM</option>
-          <option>1:00 PM</option>
-          <option>3:00 PM</option>
-          <option>4:00 PM</option>
-          <option>5:00 PM</option>
-          <option>6:00 PM</option>
-          <option>7:00 PM</option>
+          <option value="">-- Choose Time --</option>
         </select>
 
         <button onclick="sendWhatsApp()">Confirm Booking via WhatsApp</button>
-        <p style="font-size: 12px; text-align: center; margin-top: 10px">
-          Final timing confirmation will be shared via WhatsApp.
+        <p style="font-size: 11px; text-align: center; margin-top: 12px; color: #666;">
+          *Your request will be sent to our WhatsApp for final confirmation.
         </p>
       </div>
     </section>
 
     <footer>
-      © 2026 Glow Studio Salon | Designed for Professional Booking
+      © 2026 Glow Studio Salon | Premium Beauty Services Bangalore
     </footer>
 
     <script>
+      // 1. DATE PICKER: SET MIN TO TODAY
+      const dateInput = document.getElementById("date");
+      const today = new Date().toISOString().split("T")[0];
+      dateInput.setAttribute("min", today);
+
+      // 2. GENERATE TIME SLOTS: 10 AM - 8 PM
+      // AUTO-SKIPS LUNCH BREAK: 2:00 PM (14:00) to 3:00 PM (15:00)
+      const timeSelect = document.getElementById('time');
+      for (let h = 10; h < 20; h++) {
+        for (let m of ['00', '15', '30', '45']) {
+          
+          // Logic: If hour is 14 (2 PM), skip these slots
+          if (h === 14) continue; 
+
+          let ampm = h >= 12 ? 'PM' : 'AM';
+          let displayHour = h > 12 ? h - 12 : h;
+          if (displayHour === 0) displayHour = 12;
+          let timeString = displayHour + ":" + m + " " + ampm;
+          
+          let opt = document.createElement("option");
+          opt.value = timeString;
+          opt.textContent = timeString;
+          timeSelect.appendChild(opt);
+        }
+      }
+
+      // 3. PHONE FILTER: NUMBERS ONLY
+      document.getElementById('phone').addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '');
+      });
+
+      // 4. WHATSAPP SUBMISSION
       function sendWhatsApp() {
         var name = document.getElementById("name").value;
         var phone = document.getElementById("phone").value;
@@ -241,45 +186,32 @@
         var date = document.getElementById("date").value;
         var time = document.getElementById("time").value;
 
-        if (
-          name === "" ||
-          phone === "" ||
-          service === "" ||
-          date === "" ||
-          time === ""
-        ) {
-          alert("Please fill all details.");
+        // Validation for Indian numbers: Starts with 6-9 and exactly 10 digits
+        const indiaPattern = /^[6-9]\d{9}$/;
+
+        if (name === "" || phone === "" || service === "" || date === "" || time === "") {
+          alert("Please fill in all details before booking.");
+          return;
+        }
+
+        if (!indiaPattern.test(phone)) {
+          alert("Please enter a valid 10-digit Indian mobile number (starting with 6, 7, 8, or 9).");
           return;
         }
 
         var message =
-          "Hello Glow Studio,%0A%0AI would like to book an appointment:%0A%0A" +
-          "Name: " +
-          name +
-          "%0A" +
-          "Phone: " +
-          phone +
-          "%0A" +
-          "Service: " +
-          service +
-          "%0A" +
-          "Date: " +
-          date +
-          "%0A" +
-          "Time: " +
-          time +
-          "%0A%0AThank you!";
+          "*NEW BOOKING REQUEST*%0A%0A" +
+          "*Customer Name:* " + name + "%0A" +
+          "*Phone:* " + phone + "%0A" +
+          "*Service:* " + service + "%0A" +
+          "*Date:* " + date + "%0A" +
+          "*Time:* " + time + "%0A%0A_Please reply to confirm._";
 
-        var whatsappNumber = "918114883470"; // Replace with real salon number
+        var whatsappNumber = "918114883470";
         var url = "https://wa.me/" + whatsappNumber + "?text=" + message;
 
         window.open(url, "_blank");
       }
     </script>
-    <script>
-  const today = new Date().toISOString().split("T")[0];
-  document.getElementById("date").setAttribute("min", today);
-</script>
-
   </body>
 </html>
